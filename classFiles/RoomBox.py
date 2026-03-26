@@ -1,16 +1,18 @@
 from include.pyside6Import import *
+from classFiles.RoomClass import Room
+
 # -------------------- Room Card --------------------
 class RoomBox(QWidget): 
-    def __init__(self, room): 
+    def __init__(self, room: Room): 
         super().__init__() 
         self.room = room 
         layout = QVBoxLayout(self) 
         layout.setContentsMargins(6, 6, 6, 6) 
         layout.setSpacing(4) 
 
-        title = QLabel(f"{self.room.getCode()} : {self.room.getName()}") 
+        title = QLabel(f"{self.room.getRoomID()} : {self.room.getRoomName()}") 
         title.setStyleSheet( f"background-color:{self.room.getColor()};" "font-weight:bold;" "padding:6px;" ) 
-        desc = QLabel(self.room.getDesc()) 
+        desc = QLabel(self.room.getDescription()) 
         desc.setWordWrap(True) 
 
         desc.setStyleSheet( "background-color:#4C4C4C;" "color:white;" "padding:6px;" ) 
@@ -67,5 +69,5 @@ class RoomBox(QWidget):
         dialog = QDialog(self) 
         dialog.setWindowTitle("Room Page") 
         layout = QVBoxLayout(dialog) 
-        layout.addWidget(QLabel(f"Room Page: {self.room.getCode()} - {self.room.getName()}")) 
+        layout.addWidget(QLabel(f"Room Page: {self.room.getRoomID()} - {self.room.getRoomName()}")) 
         dialog.exec()

@@ -1,11 +1,13 @@
-from include.classImport import *
-
 class User(object):
-    def __init__(self,gmail,name,id,pno):
+    def __init__(self,gmail,name,id,pno, memOf=list([])):
         self.gmail = gmail
         self.name = name
         self.id = id
         self.phone = pno
+        self.rooms : list = memOf
+
+    def getRooms(self):
+        return self.rooms
 
     def createRoom(self):
         pass
@@ -39,9 +41,8 @@ class User(object):
 
 class Member(User): 
     def __init__(self, gmail, name, id, pno, memOf=list([])):
-        User.__init__(self,gmail, name, id, pno)
-        self.room : list = memOf
-        self.currRoom : Room = None
+        User.__init__(self,gmail, name, id, pno, memOf)
+        self.currRoom = None
 
     def openRoom(self,roomID):
         if roomID in self.room:
@@ -74,8 +75,11 @@ class Member(User):
         pass
 
 class Admin(Member):
-    def __init__(self, gmail, name, id, pno, roomOwn : Room, memOf=[]):
+    def __init__(self, gmail, name, id, pno, roomOwn = None, memOf=[]):
         Member.__init__(self,gmail,name,id,pno,memOf)
+        self.roomOwn = roomOwn
+
+    def assignRoom(self, roomOwn):
         self.roomOwn = roomOwn
 
     def deleteRoom(self):

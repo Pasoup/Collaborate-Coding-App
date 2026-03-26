@@ -1,19 +1,20 @@
 from include.pyside6Import import *
-from include.classImport import *
 from include.lib import *
 from uiFiles.output import Ui_Form
+from classFiles.RoomClass import Room
+from classFiles.RoomBox import RoomBox
 
 
 # -------------------- Main Window --------------------
 class Home(QMainWindow):
-    def __init__(self, data, name):
+    def __init__(self, user, ui):
         super().__init__()
 
-        self.ui = Ui_Form()
+        self.ui = ui
         self.ui.setupUi(self)
 
-        self.data = data
-        self.name = name
+        self.data = user.getRooms()
+        self.name = user.getName()
         self.filtered_rooms = []
 
 
@@ -27,12 +28,10 @@ class Home(QMainWindow):
 
 
         # Header
-        self.ui.MainPages.setCurrentIndex(2)
         self.ui.homeUserName.setText(str(self.name))
 
         # Connect search bar to trigger search on every text change
         self.ui.homeSearchBar.textChanged.connect(self.performSearch)
-
 
         # Use the grid created by Designer
         self.grid = QGridLayout()
@@ -57,9 +56,9 @@ class Home(QMainWindow):
         else:
             self.filtered_rooms = [
                 v for v in self.data
-                if text in v.getName().lower()
-                or text in v.getDesc().lower()
-                or text in str(v.getCode()).lower()
+                if text in v.getRoomName().lower()
+                or text in v.getDescription().lower()
+                or text in str(v.getRoomID()).lower()
             ]
 
         self.rebuildGrid(True)
