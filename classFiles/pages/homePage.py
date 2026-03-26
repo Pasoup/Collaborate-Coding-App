@@ -6,25 +6,16 @@ from classFiles.RoomBox import RoomBox
 
 
 # -------------------- Main Window --------------------
-class Home(QMainWindow):
-    def __init__(self, user, ui):
-        super().__init__()
+class Home(QObject):
+    def __init__(self, user, ui :Ui_Form, window: QMainWindow):
+        super().__init__(window)
 
         self.ui = ui
-        self.ui.setupUi(self)
+        self.window = window
 
         self.data = user.getRooms()
         self.name = user.getName()
         self.filtered_rooms = []
-
-
-        # Make the vertical layout the main layout of the window
-        central = QWidget(self)
-        central.setLayout(self.ui.verticalLayout)
-        self.setCentralWidget(central)
-
-
-        self.ui.verticalLayoutWidget.deleteLater()
 
 
         # Header
@@ -42,8 +33,18 @@ class Home(QMainWindow):
         self.performSearch()
 
         
+        self.ui.homeLogoutBtn.clicked.connect(self.gotoLogout)
+        self.ui.homeAddRoomBtn.clicked.connect(self.goToAddRoom)
+        self.ui.homeCreateRoomBtn.clicked.connect(self.goToCreateRoom)
+    
+    def gotoLogout(self):
+        self.ui.MainPages.setCurrentIndex(0)
 
-        
+    def goToAddRoom(self):
+        self.ui.MainPages.setCurrentIndex(0)
+    
+    def goToCreateRoom(self):
+        self.ui.MainPages.setCurrentIndex(0)
 
 
     # -------------------- Search --------------------
@@ -101,9 +102,3 @@ class Home(QMainWindow):
             if col >= self.colAmount:
                 col = 0
                 row += 1
-
-
-    # -------------------- Responsive Resize --------------------
-    def resizeEvent(self, event):
-        super().resizeEvent(event)
-        self.rebuildGrid()

@@ -16,6 +16,15 @@ class Authen(QMainWindow):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
+
+
+
+
+
+
+
+
+
         self.ui.MainPages.setCurrentIndex(0)
         self.ui.loginConfirmBtn.clicked.connect(self.loginConfirm)
         self.ui.loginRegisterBtn.clicked.connect(self.returnToRegister)
@@ -24,6 +33,7 @@ class Authen(QMainWindow):
         self.ui.registerConfirmBtn.clicked.connect(self.createNewUser)
         self.ui.registerLoginBtn.clicked.connect(self.returnToLogin)
 
+       
 
 
 
@@ -43,16 +53,20 @@ class Authen(QMainWindow):
         
     def loginConfirm(self):
         self.ui.MainPages.setCurrentIndex(2)
-        self.home = Home(self.user, self.ui)
+        self.home = Home(self.user, self.ui, self)
 
     def returnToRegister(self):
         self.ui.MainPages.setCurrentIndex(1)
 
     def createNewUser(self):
         self.ui.MainPages.setCurrentIndex(2)
-        self.home = Home(self.user, self.ui)
+        self.home = Home(self.user, self.ui, self)
 
     def returnToLogin(self):
         self.ui.MainPages.setCurrentIndex(0)
     
-    
+    # -------------------- Responsive Resize --------------------
+    def resizeEvent(self, event):
+        super().resizeEvent(event)
+        if self.home:
+            self.home.rebuildGrid()
