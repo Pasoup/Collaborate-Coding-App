@@ -41,10 +41,10 @@ class Home(QObject):
         self.ui.MainPages.setCurrentIndex(0)
 
     def goToAddRoom(self):
-        self.ui.MainPages.setCurrentIndex(0)
+        self.ui.MainPages.setCurrentIndex(4)
     
     def goToCreateRoom(self):
-        self.ui.MainPages.setCurrentIndex(0)
+        self.ui.MainPages.setCurrentIndex(3)
 
 
     # -------------------- Search --------------------

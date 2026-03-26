@@ -18,11 +18,13 @@ class Authen(QMainWindow):
 
 
 
+        # Make the vertical layout the main layout of the window
+        central = QWidget(self)
+        central.setLayout(self.ui.forStretchVerticalLayout)
+        self.setCentralWidget(central)
+        self.ui.verticalLayoutWidget_2.deleteLater()
 
-
-
-
-
+        
 
 
         self.ui.MainPages.setCurrentIndex(0)
