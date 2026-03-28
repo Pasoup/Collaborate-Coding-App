@@ -29,7 +29,7 @@ class UserSchema(BaseModel):
     phone: str
     password: str
     id: int
-    rooms: List[RoomObj] = []
+    rooms: List[dict] = []
 
 @app.post("/register")
 def register(data: UserSchema):
