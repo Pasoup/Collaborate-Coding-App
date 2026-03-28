@@ -70,3 +70,32 @@ def login(user: UserData):
             "status": "success",
             "user_data": user_obj.to_dict() 
         }
+
+
+@app.get("/users/all")
+def get_all_users():
+    all_users_list = []
+
+   
+    for username, user_obj in root.users.items():
+        try:
+            
+            if hasattr(user_obj, 'to_dict'):
+                user_data = user_obj.to_dict()
+            else:
+              
+                user_data = {
+                    "username": username,
+                    "note": "Old data format (missing fields)"
+                }
+            all_users_list.append(user_data)
+            
+        except Exception as e:
+            print(f"Error processing user {username}: {e}")
+            continue
+
+   
+    return {
+        "total_users": len(all_users_list),
+        "users": all_users_list
+    }
