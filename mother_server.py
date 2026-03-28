@@ -1,15 +1,16 @@
+import os 
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 import ZODB, ZODB.FileStorage
 import transaction
 from BTrees.OOBTree import OOBTree
-from classFiles.RoomClass import RoomObj
 from typing import List
 from classFiles.UserClass import User
 
 app = FastAPI()
 
-storage = ZODB.FileStorage.FileStorage('database.fs')
+db_path = "/data/database.fs" if os.path.exists("/data") else "database.fs"
+storage = ZODB.FileStorage.FileStorage(db_path)
 db = ZODB.DB(storage)
 connection = db.open()
 root = connection.root()
@@ -20,10 +21,11 @@ if not hasattr(root, 'users'):
     transaction.commit()
 
 class UserData(BaseModel):
-    username: strf
+    username: str
     password: str
 
 class UserSchema(BaseModel):
+    model_config = ConfigDict(arbitrary_types_allowed=True)
     username: str  
     gmail: str
     phone: str
@@ -34,7 +36,7 @@ class UserSchema(BaseModel):
 @app.post("/register")
 def register(data: UserSchema):
     
-    if data.name in root.users:
+    if data.username in root.users:
             raise HTTPException(status_code=400, detail="Username already exists")
 
     new_user = User(
@@ -47,7 +49,7 @@ def register(data: UserSchema):
 
     new_user.password = data.password 
 
-    root.users[data.name] = new_user
+    root.users[data.username] = new_user
     transaction.commit()
 
     return {"status": "success", "message": f"User {data.name} created"}
