@@ -689,7 +689,7 @@
             </spacer>
            </item>
            <item>
-            <widget class="QTextEdit" name="registerUsername_2">
+            <widget class="QTextEdit" name="registerGmail">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
                <horstretch>0</horstretch>
@@ -709,7 +709,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
             </widget>
            </item>
            <item>
-            <widget class="QTextEdit" name="registerUsername_3">
+            <widget class="QTextEdit" name="registerPhoneNumber">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
                <horstretch>0</horstretch>
@@ -1158,8 +1158,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>577</width>
-              <height>419</height>
+              <width>98</width>
+              <height>28</height>
              </rect>
             </property>
            </widget>
@@ -2079,8 +2079,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>477</width>
-                     <height>336</height>
+                     <width>98</width>
+                     <height>28</height>
                     </rect>
                    </property>
                   </widget>

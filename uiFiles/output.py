@@ -315,19 +315,19 @@ class Ui_Form(object):
 
         self.horizontalLayout_39.addItem(self.horizontalSpacer_52)
 
-        self.registerUsername_2 = QTextEdit(self.verticalLayoutWidget_6)
-        self.registerUsername_2.setObjectName(u"registerUsername_2")
-        sizePolicy1.setHeightForWidth(self.registerUsername_2.sizePolicy().hasHeightForWidth())
-        self.registerUsername_2.setSizePolicy(sizePolicy1)
+        self.registerGmail = QTextEdit(self.verticalLayoutWidget_6)
+        self.registerGmail.setObjectName(u"registerGmail")
+        sizePolicy1.setHeightForWidth(self.registerGmail.sizePolicy().hasHeightForWidth())
+        self.registerGmail.setSizePolicy(sizePolicy1)
 
-        self.horizontalLayout_39.addWidget(self.registerUsername_2)
+        self.horizontalLayout_39.addWidget(self.registerGmail)
 
-        self.registerUsername_3 = QTextEdit(self.verticalLayoutWidget_6)
-        self.registerUsername_3.setObjectName(u"registerUsername_3")
-        sizePolicy1.setHeightForWidth(self.registerUsername_3.sizePolicy().hasHeightForWidth())
-        self.registerUsername_3.setSizePolicy(sizePolicy1)
+        self.registerPhoneNumber = QTextEdit(self.verticalLayoutWidget_6)
+        self.registerPhoneNumber.setObjectName(u"registerPhoneNumber")
+        sizePolicy1.setHeightForWidth(self.registerPhoneNumber.sizePolicy().hasHeightForWidth())
+        self.registerPhoneNumber.setSizePolicy(sizePolicy1)
 
-        self.horizontalLayout_39.addWidget(self.registerUsername_3)
+        self.horizontalLayout_39.addWidget(self.registerPhoneNumber)
 
         self.horizontalSpacer_53 = QSpacerItem(80, 5, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
@@ -521,7 +521,7 @@ class Ui_Form(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidget = QWidget()
         self.scrollAreaWidget.setObjectName(u"scrollAreaWidget")
-        self.scrollAreaWidget.setGeometry(QRect(0, 0, 577, 419))
+        self.scrollAreaWidget.setGeometry(QRect(0, 0, 98, 28))
         self.scrollArea.setWidget(self.scrollAreaWidget)
 
         self.VLHome.addWidget(self.scrollArea)
@@ -923,7 +923,7 @@ class Ui_Form(object):
         self.chatHistoryArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 477, 336))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 98, 28))
         self.chatHistoryArea.setWidget(self.scrollAreaWidgetContents_2)
 
         self.VLChat.addWidget(self.chatHistoryArea)
@@ -1083,7 +1083,7 @@ class Ui_Form(object):
         self.label_11.setText(QCoreApplication.translate("Form", u"Username :", None))
         self.label_17.setText(QCoreApplication.translate("Form", u"Gmail :", None))
         self.label_14.setText(QCoreApplication.translate("Form", u"Phone Number :", None))
-        self.registerUsername_2.setHtml(QCoreApplication.translate("Form", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.registerGmail.setHtml(QCoreApplication.translate("Form", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
