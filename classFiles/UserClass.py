@@ -1,4 +1,7 @@
-class User(object):
+from persistent import Persistent
+
+
+class User(Persistent):
     def __init__(self,gmail,name,id,pno, memOf=list([])):
         self.gmail = gmail
         self.name = name
@@ -9,6 +12,14 @@ class User(object):
     def getRooms(self):
         return self.rooms
 
+    def to_dict(self):
+        return {
+            "gmail": self.gmail, 
+            "name": self.name,
+            "id": self.id,
+            "phone": self.phone,
+            "rooms": self.rooms
+        }
     def createRoom(self):
         pass
 
