@@ -3,6 +3,9 @@ from pydantic import BaseModel
 import ZODB, ZODB.FileStorage
 import transaction
 from BTrees.OOBTree import OOBTree
+from classFiles.RoomClass import RoomObj
+from typing import List
+from classFiles.UserClass import User
 
 app = FastAPI()
 
@@ -16,23 +19,38 @@ if not hasattr(root, 'users'):
     root.users = OOBTree()
     transaction.commit()
 
-
 class UserData(BaseModel):
-    username: str
+    username: strf
     password: str
 
+class UserSchema(BaseModel):
+    username: str  
+    gmail: str
+    phone: str
+    password: str
+    id: int
+    rooms: List[RoomObj] = []
 
 @app.post("/register")
-def register(user: UserData):
+def register(data: UserSchema):
     
-    if user.username in root.users:
-        raise HTTPException(status_code=400, detail="Username already exists")
-    
-    root.users[user.username] = {"password": user.password}
-    transaction.commit() 
-    
-    print(f"Server: Registered new user '{user.username}'")
-    return {"status": "success"}
+    if data.name in root.users:
+            raise HTTPException(status_code=400, detail="Username already exists")
+
+    new_user = User(
+        gmail=data.gmail,
+        name=data.username,
+        id=data.id,
+        pno=data.phone,
+        memOf=[] 
+    )
+
+    new_user.password = data.password 
+
+    root.users[data.name] = new_user
+    transaction.commit()
+
+    return {"status": "success", "message": f"User {data.name} created"}
 
 
 @app.post("/login")
@@ -41,8 +59,12 @@ def login(user: UserData):
     if user.username not in root.users:
         raise HTTPException(status_code=401, detail="User not found")
     
-    if root.users[user.username]["password"] != user.password:
+    user_obj = root.users[user.username]
+    if user_obj.password != user.password:
         raise HTTPException(status_code=401, detail="Incorrect password")
     
     print(f"Server: '{user.username}' logged in successfully.")
-    return {"status": "success"}
+    return {
+            "status": "success",
+            "user_data": user_obj.to_dict() 
+        }
