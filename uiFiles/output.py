@@ -247,7 +247,7 @@ class Ui_Form(object):
 
         self.horizontalLayout_30 = QHBoxLayout()
         self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
-        self.horizontalLayout_30.setContentsMargins(-1, 15, -1, -1)
+        self.horizontalLayout_30.setContentsMargins(-1, 5, -1, -1)
         self.horizontalSpacer_32 = QSpacerItem(80, 5, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_30.addItem(self.horizontalSpacer_32)
@@ -263,7 +263,7 @@ class Ui_Form(object):
 
         self.horizontalLayout_29 = QHBoxLayout()
         self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
-        self.horizontalLayout_29.setContentsMargins(-1, -1, -1, 15)
+        self.horizontalLayout_29.setContentsMargins(-1, -1, -1, 5)
         self.horizontalSpacer_35 = QSpacerItem(80, 5, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_29.addItem(self.horizontalSpacer_35)
@@ -282,9 +282,63 @@ class Ui_Form(object):
 
         self.VLRegister.addLayout(self.horizontalLayout_29)
 
+        self.horizontalLayout_35 = QHBoxLayout()
+        self.horizontalLayout_35.setObjectName(u"horizontalLayout_35")
+        self.horizontalLayout_35.setContentsMargins(-1, 5, -1, -1)
+        self.horizontalSpacer_51 = QSpacerItem(80, 5, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_35.addItem(self.horizontalSpacer_51)
+
+        self.label_17 = QLabel(self.verticalLayoutWidget_6)
+        self.label_17.setObjectName(u"label_17")
+        self.label_17.setFont(font1)
+
+        self.horizontalLayout_35.addWidget(self.label_17)
+
+        self.label_14 = QLabel(self.verticalLayoutWidget_6)
+        self.label_14.setObjectName(u"label_14")
+        self.label_14.setFont(font1)
+
+        self.horizontalLayout_35.addWidget(self.label_14)
+
+        self.horizontalSpacer_54 = QSpacerItem(80, 5, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_35.addItem(self.horizontalSpacer_54)
+
+
+        self.VLRegister.addLayout(self.horizontalLayout_35)
+
+        self.horizontalLayout_39 = QHBoxLayout()
+        self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
+        self.horizontalLayout_39.setContentsMargins(-1, -1, -1, 5)
+        self.horizontalSpacer_52 = QSpacerItem(80, 5, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_39.addItem(self.horizontalSpacer_52)
+
+        self.registerUsername_2 = QTextEdit(self.verticalLayoutWidget_6)
+        self.registerUsername_2.setObjectName(u"registerUsername_2")
+        sizePolicy1.setHeightForWidth(self.registerUsername_2.sizePolicy().hasHeightForWidth())
+        self.registerUsername_2.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_39.addWidget(self.registerUsername_2)
+
+        self.registerUsername_3 = QTextEdit(self.verticalLayoutWidget_6)
+        self.registerUsername_3.setObjectName(u"registerUsername_3")
+        sizePolicy1.setHeightForWidth(self.registerUsername_3.sizePolicy().hasHeightForWidth())
+        self.registerUsername_3.setSizePolicy(sizePolicy1)
+
+        self.horizontalLayout_39.addWidget(self.registerUsername_3)
+
+        self.horizontalSpacer_53 = QSpacerItem(80, 5, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_39.addItem(self.horizontalSpacer_53)
+
+
+        self.VLRegister.addLayout(self.horizontalLayout_39)
+
         self.horizontalLayout_28 = QHBoxLayout()
         self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
-        self.horizontalLayout_28.setContentsMargins(-1, 15, -1, -1)
+        self.horizontalLayout_28.setContentsMargins(-1, 5, -1, -1)
         self.horizontalSpacer_37 = QSpacerItem(80, 5, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_28.addItem(self.horizontalSpacer_37)
@@ -300,7 +354,7 @@ class Ui_Form(object):
 
         self.horizontalLayout_27 = QHBoxLayout()
         self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
-        self.horizontalLayout_27.setContentsMargins(-1, -1, -1, 15)
+        self.horizontalLayout_27.setContentsMargins(-1, -1, -1, 5)
         self.horizontalSpacer_45 = QSpacerItem(80, 5, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_27.addItem(self.horizontalSpacer_45)
@@ -321,7 +375,7 @@ class Ui_Form(object):
 
         self.horizontalLayout_26 = QHBoxLayout()
         self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
-        self.horizontalLayout_26.setContentsMargins(-1, 15, -1, -1)
+        self.horizontalLayout_26.setContentsMargins(-1, 5, -1, -1)
         self.horizontalSpacer_44 = QSpacerItem(80, 5, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_26.addItem(self.horizontalSpacer_44)
@@ -339,7 +393,7 @@ class Ui_Form(object):
 
         self.horizontalLayout_25 = QHBoxLayout()
         self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
-        self.horizontalLayout_25.setContentsMargins(-1, -1, -1, 15)
+        self.horizontalLayout_25.setContentsMargins(-1, -1, -1, 5)
         self.horizontalSpacer_41 = QSpacerItem(80, 5, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_25.addItem(self.horizontalSpacer_41)
@@ -1011,7 +1065,7 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
 
-        self.MainPages.setCurrentIndex(4)
+        self.MainPages.setCurrentIndex(1)
         self.SubPages.setCurrentIndex(0)
 
 
@@ -1027,6 +1081,16 @@ class Ui_Form(object):
         self.loginConfirmBtn.setText(QCoreApplication.translate("Form", u"Login", None))
         self.label_3.setText(QCoreApplication.translate("Form", u"Register", None))
         self.label_11.setText(QCoreApplication.translate("Form", u"Username :", None))
+        self.label_17.setText(QCoreApplication.translate("Form", u"Gmail :", None))
+        self.label_14.setText(QCoreApplication.translate("Form", u"Phone Number :", None))
+        self.registerUsername_2.setHtml(QCoreApplication.translate("Form", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.label_12.setText(QCoreApplication.translate("Form", u"Password : ", None))
         self.label_13.setText(QCoreApplication.translate("Form", u"Confirm Password :", None))
         self.registerLoginBtn.setText(QCoreApplication.translate("Form", u"Login", None))
