@@ -1,5 +1,8 @@
 fastapi
 uvicorn
-ZODB
-transaction
 pydantic
+ZODB
+zope.interface
+transaction
+BTrees
+requests
