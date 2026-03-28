@@ -52,7 +52,7 @@ def register(data: UserSchema):
     root.users[data.username] = new_user
     transaction.commit()
 
-    return {"status": "success", "message": f"User {data.name} created"}
+    return {"status": "success", "message": f"User {data.username} created"}
 
 
 @app.post("/login")
